@@ -6,6 +6,7 @@ import {
   removeFromDatabaseCart,
 } from "../../utilities/databaseManager";
 import ReviewItem from "../ReviewItem/ReviewItem";
+import Cart from "../Cart/Cart";
 
 const Review = () => {
   const [cart, setCart] = useState([]);
@@ -28,15 +29,17 @@ const Review = () => {
     setCart(cartProducts);
   }, []);
   return (
-    <div>
-      <h1>Cart Itmes: {cart.length}</h1>
-      {cart.map((pd) => (
-        <ReviewItem
-          key={pd.key}
-          removeProduct={removeProduct}
-          product={pd}
-        ></ReviewItem>
-      ))}
+    <div className="twin-container">
+      <div className="product-container">
+        {cart.map((pd) => (
+          <ReviewItem
+            key={pd.key}
+            removeProduct={removeProduct}
+            product={pd}
+          ></ReviewItem>
+        ))}
+      </div>
+      <Cart cart={cart}></Cart>
     </div>
   );
 };
