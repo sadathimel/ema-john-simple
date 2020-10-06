@@ -11,8 +11,8 @@ const Header = () => {
             <img src={logo} alt=""/>
             <nav>
                 <Link to="/shop">Shop</Link>
-                <Link to="/review">Ordr Review</Link>
-                <Link to="/inventory">Manage Inventory</Link>
+                <Link to="/review">Order Review</Link>
+                <Link to="/orders">Order History</Link>
                 <button onClick={()=>setLoggedInUser({})} >Sign out</button>
             </nav>
         </div>
